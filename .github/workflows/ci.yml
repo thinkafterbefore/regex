@@ -21,7 +21,7 @@ jobs:
         include:
         - build: stable
           runner: [self-hosted, X64, macOS]
-          os: ubuntu-18.04
+          os: macOS-latest
           rust: stable
     steps:
 
