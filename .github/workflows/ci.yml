@@ -20,7 +20,7 @@ jobs:
         - stable
         include:
         - build: stable
-          runner: buildjet-4vcpu-ubuntu-1804
+          runner: buildjet-8vcpu-ubuntu-1804
           os: ubuntu-18.04
           rust: stable
     steps:
