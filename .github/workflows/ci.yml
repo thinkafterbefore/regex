@@ -6,21 +6,20 @@ on:
     - master
 jobs:
   test:
-    name: test ${{matrix.runner}}
+    name: test ${{matrix.runs-on}}
     env:
       # For some builds, we use cross to test on 32-bit and big-endian
       # systems.
       CARGO: cargo
       # When CARGO is set to CROSS, TARGET is set to `--target matrix.target`.
       TARGET:
-    runs-on: ${{ matrix.runner }}
+    runs-on: ${{ matrix.runs-on }}
     strategy:
       matrix:
-        build:
-        - stable
+        runs-on: [ubuntu-latest]
+        build: [stable]
         include:
         - build: stable
-          runner: [ubuntu-latest, buildjet-2vcpu-ubuntu-2004]
           os: macOS-latest
           rust: stable
     steps:
