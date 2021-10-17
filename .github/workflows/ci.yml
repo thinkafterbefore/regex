@@ -6,7 +6,7 @@ on:
     - master
 jobs:
   test:
-    name: test
+    name: test ${{matrix.runner}}
     env:
       # For some builds, we use cross to test on 32-bit and big-endian
       # systems.
@@ -20,7 +20,7 @@ jobs:
         - stable
         include:
         - build: stable
-          runner: [self-hosted, X64, macOS]
+          runner: [ubuntu-latest, buildjet-2vcpu-ubuntu-2004]
           os: macOS-latest
           rust: stable
     steps:
