@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.runs-on }}
     strategy:
       matrix:
-        runs-on: [ubuntu-latest]
+        runs-on: [ubuntu-latest, buildjet-2vcpu-ubuntu-1804, buildjet-4vcpu-ubuntu-1804, buildjet-8vcpu-ubuntu-1804]
         build: [stable]
         include:
         - build: stable
