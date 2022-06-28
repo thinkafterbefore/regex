@@ -5,7 +5,11 @@ on:
 
 jobs:
   qemu:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        runs-on: [buildjet-2vcpu-ubuntu-2004, ubuntu-latest]
+    name: Test - ${{matrix.runs-on}}
+    runs-on: ${{matrix.runs-on}}
     steps:
       -
         name: Set up QEMU
