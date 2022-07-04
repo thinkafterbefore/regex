@@ -7,7 +7,7 @@ jobs:
   qemu:
     strategy:
       matrix:
-        runs-on: [buildjet-2vcpu-ubuntu-2004, ubuntu-latest, buildjet-2vcpu-ubuntu-2204]
+        runs-on: [buildjet-2vcpu-ubuntu-2004,buildjet-2vcpu-ubuntu-1804, ubuntu-latest, buildjet-2vcpu-ubuntu-2204]
     name: Test - ${{matrix.runs-on}}
     runs-on: ${{matrix.runs-on}}
     steps:
