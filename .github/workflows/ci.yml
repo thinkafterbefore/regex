@@ -14,3 +14,9 @@ jobs:
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
+  mactest:
+    runs-on: macos-latest
+    name: macos
+    steps: 
+      - name: Get Mac Hardware information
+        run: system_profiler SPSoftwareDataType SPHardwareDataType
